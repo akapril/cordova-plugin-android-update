@@ -112,11 +112,17 @@ public class CheckUpdateThread implements Runnable {
       e.printStackTrace();
     }
 
-    InputStream is = returnFileIS(updateXmlUrl);
-    // 解析XML文件。 由于XML文件比较小，因此使用DOM方式进行解析
-    ParseXmlService service = new ParseXmlService();
+    // InputStream is = returnFileIS(updateXmlUrl);
+    // // 解析XML文件。 由于XML文件比较小，因此使用DOM方式进行解析
+    // ParseXmlService service = new ParseXmlService();
     try {
-      setMHashMap(service.parseXml(is));
+      JSONObject jsonObject = new JSONObject(updateXmlUrl);
+      HashMap<String,String> map = new HashMap<>();
+      map.put("version",String.valueOf(jsonObject.get("version")));
+      map.put("name",String.valueOf(jsonObject.get("name")));
+      map.put("remark",String.valueOf(jsonObject.get("remark")));
+      setMHashMap(map);
+      // setMHashMap(service.parseXml(is));
     } catch (Exception e) {
       e.printStackTrace();
     }
