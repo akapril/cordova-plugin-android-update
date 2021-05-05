@@ -121,6 +121,7 @@ public class CheckUpdateThread implements Runnable {
       map.put("version",String.valueOf(jsonObject.get("version")));
       map.put("name",String.valueOf(jsonObject.get("name")));
       map.put("remark",String.valueOf(jsonObject.get("remark")));
+      map.put("url",String.valueOf(jsonObject.get("url")));
       setMHashMap(map);
       // setMHashMap(service.parseXml(is));
     } catch (Exception e) {
