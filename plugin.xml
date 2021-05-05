@@ -83,7 +83,7 @@
         <source-file src="res/drawable/upgrade_dialog_bg.xml" target-dir="res/drawable"/>
 
         <source-file src="res/mipmap-xxhdpi/upgrade_dialog_bg.png" target-dir="res/mipmap-xxhdpi"/>
-        
+        <framework src="src/android/android-update.gradle.gradle" custom="true" type="gradleReference" />
         <framework src="com.android.support:support-v4:24.1.1+" />
     </platform>
 </plugin>
